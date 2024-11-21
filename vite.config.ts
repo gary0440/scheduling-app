@@ -9,19 +9,10 @@ export default defineConfig({
     port: 3000
   },
   build: {
-    lib: {
-      entry: path.resolve(__dirname, 'src/embed.tsx'),
-      name: 'MiraBooking',
-      fileName: 'embed',
-      formats: ['iife']
-    },
+    outDir: 'dist',
     rollupOptions: {
-      external: ['react', 'react-dom'],
-      output: {
-        globals: {
-          react: 'React',
-          'react-dom': 'ReactDOM'
-        }
+      input: {
+        main: path.resolve(__dirname, 'index.html')
       }
     }
   }
